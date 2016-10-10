@@ -1,0 +1,231 @@
+@charset "UTF-8";
+* {
+  padding: 0;
+  margin: 0;
+  list-style: none; }
+
+html {
+  height: 100%; }
+
+body {
+  height: 100%;
+  background: #B8CBD2 url(../images/bg3.jpg) no-repeat 0/cover;
+  overflow: hidden;
+  opacity: 0;
+  transition: opacity 3s ease;
+  animation: opacity 3s ease both; }
+
+@keyframes opacity {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+
+.stars {
+  height: 0px;
+  width: 0px;
+  background: url(../images/bg.jpg) no-repeat 0/100%;
+  margin: 100px auto;
+  transition: height 3s ease, width 3s ease, transform 3s ease;
+  animation: height 3s ease both 2s; }
+
+@keyframes height {
+  from {
+    height: 0;
+    width: 0;
+    transform: rotateZ(3600deg); }
+  to {
+    height: 300px;
+    width: 300px; } }
+  .stars.leave {
+    top: -1500px; }
+
+.open {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 100px;
+  margin: auto;
+  height: 50px;
+  width: 150px;
+  background: linear-gradient(#CCC 30%, #fff 70%);
+  box-shadow: 1px 1px 2px #ccc;
+  line-height: 50px;
+  text-align: center;
+  font-size: 20px;
+  font-family: "李旭科毛笔行书";
+  cursor: pointer; }
+  .open:active {
+    box-shadow: 1px 1px 2px #000 inset; }
+  .open.leave {
+    bottom: -1500px; }
+
+.bg {
+  height: 100%;
+  width: 1000px;
+  background: rgba(239, 255, 238, 0.54);
+  position: absolute;
+  top: 1500px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  transition: top 1s ease; }
+  .bg.bgs {
+    top: 0; }
+  .bg .player {
+    height: 100%;
+    width: 280px; }
+    .bg .player .player1, .bg .player .player2 {
+      height: 40%;
+      width: 280px;
+      position: absolute;
+      left: -1000px;
+      background: url(../images/bg5.jpg); }
+      .bg .player .player1 .block, .bg .player .player1 .white, .bg .player .player2 .block, .bg .player .player2 .white {
+        height: 200px;
+        width: 80px;
+        position: absolute; }
+      .bg .player .player1 .heiqi, .bg .player .player1 .baiqi, .bg .player .player2 .heiqi, .bg .player .player2 .baiqi {
+        height: 55px;
+        width: 55px;
+        position: absolute;
+        bottom: -15px;
+        right: 0px;
+        left: 0;
+        margin: auto; }
+      .bg .player .player1 span, .bg .player .player2 span {
+        display: block;
+        width: 100%;
+        text-align: center;
+        line-height: 30px;
+        font-family: "李旭科毛笔行书";
+        font-weight: 100; }
+    .bg .player .player1 {
+      transition: left 1s ease 1s;
+      bottom: 20px; }
+      .bg .player .player1 .block {
+        bottom: -10px;
+        right: 0px;
+        background: url("../images/1212.png") no-repeat 10px 10px/180px 280px; }
+      .bg .player .player1 .heiqi {
+        background: url("../images/qizi.png") -5px -52px;
+        background-size: 100%; }
+      .bg .player .player1.player1s {
+        left: 0; }
+    .bg .player .player2 {
+      transition: left 1s ease 2s;
+      top: 20px; }
+      .bg .player .player2.player2s {
+        left: 0; }
+      .bg .player .player2 .baiqi {
+        background: url("../images/qizi.png") no-repeat -7px 0px;
+        background-size: 100%; }
+      .bg .player .player2 .white {
+        bottom: -10px;
+        right: 0px;
+        background: url("../images/1212.png") no-repeat -88px 10px/180px 280px; }
+
+#canvas {
+  position: absolute;
+  bottom: 0;
+  top: 0px;
+  right: 250px;
+  margin: auto;
+  background: url(../images/4.jpg) no-repeat 0/100%; }
+
+#canvas1, #canvas2 {
+  position: absolute;
+  top: 80px;
+  background: url(../images/clock.png) no-repeat 0 -1px;
+  background-size: 175px; }
+
+#canvas1 {
+  left: 60px; }
+
+#canvas2 {
+  left: 60px; }
+
+.alert-box {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.3);
+  display: none; }
+  .alert-box .alert {
+    height: 200px;
+    width: 400px;
+    position: absolute;
+    bottom: 0px;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    text-align: center; }
+    .alert-box .alert .alert-inner {
+      height: 140px;
+      width: 100%;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      background: rgba(255, 255, 255, 0.9);
+      text-align: center;
+      line-height: 140px; }
+    .alert-box .alert .button, .alert-box .alert .button1 {
+      position: absolute;
+      bottom: 0;
+      height: 59px;
+      width: 199px;
+      borber-top: 1px;
+      border-top-style: solid;
+      border-top-color: rgba(238, 247, 245, 0.92);
+      background: rgba(255, 255, 255, 0.9);
+      line-height: 60px;
+      color: #3393ff;
+      cursor: pointer; }
+    .alert-box .alert .button {
+      left: 0;
+      borber-right: 1px;
+      border-right-style: solid;
+      border-right-color: rgba(238, 247, 245, 0.92); }
+    .alert-box .alert .button1 {
+      right: 0;
+      width: 198px; }
+
+.buton-box {
+  width: 150px;
+  position: absolute;
+  bottom: 0px;
+  right: 50px;
+  height: 200px;
+  color: #611611;
+  font-family: "李旭科毛笔行书"; }
+  .buton-box .start, .buton-box .baton, .buton-box .baton1, .buton-box .baton2 {
+    height: 40px;
+    width: 150px;
+    background: url(../images/3.jpg) no-repeat 0 0/100%;
+    box-shadow: 1px 1px 1px #505050;
+    margin-bottom: 5px;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer; }
+    .buton-box .start:active, .buton-box .baton:active, .buton-box .baton1:active, .buton-box .baton2:active {
+      box-shadow: 1px 1px 1px #000 inset; }
+    .buton-box .start.opens, .buton-box .baton.opens, .buton-box .baton1.opens, .buton-box .baton2.opens {
+      background: url(../images/3.jpg) -110px 0/100%; }
+
+.regular {
+  height: 250px;
+  width: 300px;
+  position: absolute;
+  line-height: 30px;
+  font-family: "李旭科毛笔行书";
+  background: url(../images/bg4.jpg) no-repeat 0/100%;
+  left: 0;
+  right: 0;
+  bottom: -1500px;
+  margin: auto;
+  transition: bottom 1s ease; }
+  .regular.regular1 {
+    bottom: 100px; }
